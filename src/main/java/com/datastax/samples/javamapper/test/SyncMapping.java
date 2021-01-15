@@ -104,10 +104,12 @@ public class SyncMapping {
 		long totalTime = 0L;
 
 
-		try (CqlSession session = CqlSession.builder().addContactPoint(new InetSocketAddress("54.193.183.91", 9042))
-				.addContactPoint(new InetSocketAddress(":wq"
-						+ "", 9042)).withLocalDatacenter("DC1")
-				.withAuthCredentials("cassandra", "cassandra").build()) {
+		try (CqlSession session = CqlSession.builder()
+				//.addContactPoint(new InetSocketAddress("54.193.183.91", 9042))
+				//.addContactPoint(new InetSocketAddress(":wq"
+				//		+ "", 9042)).withLocalDatacenter("DC1")
+				//.withAuthCredentials("cassandra", "cassandra")
+				.build()) {
 			System.out.println("datastax-java-driver.basic.request.page-size --- "
 					+ System.getProperty("datastax-java-driver.basic.request.page-size"));
 

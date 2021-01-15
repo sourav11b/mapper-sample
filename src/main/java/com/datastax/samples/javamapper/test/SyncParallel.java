@@ -34,7 +34,7 @@ public class SyncParallel {
 		
 		List<Long> results = new ArrayList<Long>();
 		for (int i = 0; i < 11 ; i++) {
-			results.add(Long.valueOf(example.execute(false,true,false,0,"1000")));
+			results.add(Long.valueOf(example.execute(Boolean.valueOf(args[0]),true,false,0,"1000")));
 			example.list.clear();
 			Thread.sleep(2000);
 		}
@@ -64,9 +64,12 @@ public class SyncParallel {
 
 	//	int limit = 1000;
 
-		try (CqlSession session = CqlSession.builder().addContactPoint(new InetSocketAddress("54.193.183.91", 9042))
-				.addContactPoint(new InetSocketAddress("54.153.62.226", 9042)).withLocalDatacenter("DC1")
-				.withAuthCredentials("cassandra", "cassandra").build()) {
+		try (CqlSession session = CqlSession.builder()
+				//.addContactPoint(new InetSocketAddress("54.193.183.91", 9042))
+				//.addContactPoint(new InetSocketAddress("54.153.62.226", 9042)).withLocalDatacenter("DC1")
+				//.withAuthCredentials("cassandra", "cassandra")
+				.build()
+				) {
 			SimpleStatement statement;
 
 			if (bucket) {
