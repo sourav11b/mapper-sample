@@ -9,9 +9,11 @@
 
 ## Run
 
-- mapped with page size x : java -jar target\mapper-sample-0.0.1-SNAPSHOT.jar x false false true ''
-- unmapped with page size x : java -jar target\mapper-sample-0.0.1-SNAPSHOT.jar x false false false ''
+- mapped with page size x : java -cp target\mapper-sample-0.0.1-SNAPSHOT.jar com.datastax.samples.javamapper.test.SyncMapping x false false true ''
+- unmapped with page size x : java -cp target\mapper-sample-0.0.1-SNAPSHOT.jar com.datastax.samples.javamapper.test.SyncMapping x false false false ''
 - 10K rows from single partition : java -cp target\mapper-sample-0.0.1-SNAPSHOT.jar com.datastax.samples.javamapper.test.SyncParallel false
 - 10K rows from 6 monthly partitons : java -cp target\mapper-sample-0.0.1-SNAPSHOT.jar com.datastax.samples.javamapper.test.SyncParallel true
+- blob to object mapper sample : java -cp target\mapper-sample-0.0.1-SNAPSHOT.jar com.datastax.samples.javamapper.blob.test.TestBlobMapping
+
 
 ### End
